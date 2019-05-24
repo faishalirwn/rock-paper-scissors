@@ -7,6 +7,107 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script></script>
+    <script>
+        function computerPlay() {
+            const randomNum = Math.floor(Math.random() * 3) + 1
+            switch (randomNum) {
+                case 1:
+                    return "rock"
+                    break;
+                case 2:
+                    return "paper"
+                    break;
+                case 3:
+                    return "scissors"
+                    break;
+            }
+        }
+
+        function playerPlay() {
+            let playerSelection = prompt(`Choose wisely: Rock, Paper, Scissors?`)
+
+            if (playerSelection !== null || typeof playerSelection === "number") {
+                playerSelection = playerSelection.toLowerCase();
+            }
+
+            if (playerSelection === null) {
+                alert("Canceled");
+                canceled = true;
+                return
+            } else if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+                
+                while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+                    
+                    alert("Please choose between those three!");
+                    playerSelection = prompt(`Choose wisely: Rock, Paper, Scissors?`)
+                    
+                    if (playerSelection !== null || typeof playerSelection === "number") {
+                        playerSelection = playerSelection.toLowerCase();
+                    }
+
+                    if (playerSelection === null) {
+                        alert("Canceled");
+                        canceled = true;
+                        return
+                    }
+                }
+
+                return playerSelection
+                
+            } else {
+                return playerSelection
+            }
+            
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if ((playerSelection === "rock" && computerSelection === "rock") || (playerSelection === "paper" && computerSelection === "paper") || (playerSelection === "scissors" && computerSelection === "scissors")) {
+                alert(`Draw! ${playerSelection} versus ${computerSelection}`)
+                alert(`Current score: ${playerScore}:${computerScore}`)
+            } else if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
+                playerScore++;
+                alert(`You won! ${playerSelection} beats ${computerSelection}`)
+                alert(`Current score: ${playerScore}:${computerScore}`)
+            } else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) {
+                computerScore++;
+                alert(`You lose! ${computerSelection} beats ${playerSelection}`)
+                alert(`Current score: ${playerScore}:${computerScore}`)
+            } else {
+                return
+            }
+        }
+
+        let playerScore = 0,
+            computerScore = 0,
+            canceled = false;
+
+        function game(roundNumber) {
+            
+            if (roundNumber === null) {
+                canceled = true;
+            } else if (roundNumber === NaN || typeof roundNumber !== "number") {
+                alert("Please enter a valid number!")
+                game(prompt("How many rounds do you want to play?"))
+            }
+            
+            for (let i = 0; i < roundNumber; i++) {
+                playRound(playerPlay(), computerPlay());
+                if (canceled === true) {
+                    break;
+                }
+            }
+
+            if (playerScore > computerScore && canceled === false) {
+                return alert(`Congratulations you beat der computer! The score was ${playerScore}:${computerScore}`);
+            } else if (playerScore <= computerScore && canceled === false) {
+                return alert(`Better luck next time! The score was ${playerScore}:${computerScore}`);
+            } else {
+                return alert("Canceled!");
+            }
+        }
+
+        game(prompt("How many rounds do you want to play?"))
+
+    </script>
 </body>
 </html>
