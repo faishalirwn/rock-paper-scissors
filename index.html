@@ -31,7 +31,6 @@
             }
 
             if (playerSelection === null) {
-                alert("Canceled");
                 canceled = true;
                 return
             } else if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
@@ -46,7 +45,6 @@
                     }
 
                     if (playerSelection === null) {
-                        alert("Canceled");
                         canceled = true;
                         return
                     }
@@ -82,10 +80,12 @@
             canceled = false;
 
         function game(roundNumber) {
-            
-            if (roundNumber === null) {
+            console.log(roundNumber)
+            console.log(roundNumber === NaN)
+
+            if (roundNumber === 0) {
                 canceled = true;
-            } else if (roundNumber === NaN || typeof roundNumber !== "number") {
+            } else if (isNaN(roundNumber)) {
                 alert("Please enter a valid number!")
                 game(prompt("How many rounds do you want to play?"))
             }
@@ -106,7 +106,7 @@
             }
         }
 
-        game(prompt("How many rounds do you want to play?"))
+        game(Number(prompt("How many rounds do you want to play?")))
 
     </script>
 </body>
