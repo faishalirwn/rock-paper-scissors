@@ -45,7 +45,6 @@ function computerPlay() {
 
 
 function determineWinner(playerChoice, computerChoice) {
-    // ['👊', '✋', '✌️']
     if ((playerChoice === '👊' && computerChoice === '✌️') || 
         (playerChoice === '✋' && computerChoice === '👊') || 
         (playerChoice === '✌️' && computerChoice === '✋')) {
@@ -68,7 +67,7 @@ choiceBtn.forEach((el) => {
         determineWinner(playerChoice, computerChoice);
         playerScoreEl.textContent = playerScore;
         computerScoreEl.textContent = computerScore;
-        
+
         if (playerScore === 5 || computerScore === 5) {
             choiceBtn.forEach((el) => {
                 el.style.display = 'none';
