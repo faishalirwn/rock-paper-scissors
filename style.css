@@ -40,16 +40,16 @@ body {
 }
 
 h1 {
-    margin: 10px 0 10px;
+    margin-bottom: 10px;
 }
 
 #game-rule {
-    margin: 10px 0 20px;
+    margin-bottom: 40px;
 }
 
 #announcer {
     display: none;
-    margin: 10px 0 10px;
+    margin-bottom: 40px;
     font-size: 2em;
 }
 
@@ -59,7 +59,7 @@ h1 {
 
 #arena {
     display: none;
-    margin: 10px 0 10px;
+    margin-bottom: 40px;
 }
 
 .arena-show {
