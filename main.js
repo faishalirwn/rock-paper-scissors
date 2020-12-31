@@ -5,22 +5,17 @@ const resultEl = document.querySelector('#result');
 const arenaEl = document.querySelector('#arena');
 const playerChoiceEl = document.querySelector('#player-choice');
 const computerChoiceEl = document.querySelector('#computer-choice');
-const startBtn = document.querySelector('#start-btn');
+const restartBtn = document.querySelector('#restart-btn');
 const choiceBtn = document.querySelectorAll('.choice-btn');
 
 
 // Game state
 let playerScore = 0;
 let computerScore = 0;
-let firstGame = true;
 
 
-// Start button behavior
-startBtn.addEventListener('click', () => {
-    if (firstGame) {
-        announcerEl.style.display = 'block';
-        arenaEl.style.display = 'flex';
-    }
+// reStart button behavior
+restartBtn.addEventListener('click', () => {
 
     playerScore = 0;
     computerScore = 0;
@@ -28,7 +23,7 @@ startBtn.addEventListener('click', () => {
     computerScoreEl.textContent = 0;
     playerChoiceEl.textContent = '?';
     computerChoiceEl.textContent = '?';
-    startBtn.style.display = 'none';
+    restartBtn.style.display = 'none';
     resultEl.style.display = 'none';
 
     choiceBtn.forEach((el) => {
@@ -72,11 +67,7 @@ choiceBtn.forEach((el) => {
             choiceBtn.forEach((el) => {
                 el.style.display = 'none';
             });            
-            startBtn.style.display = 'inline';
-
-            if (firstGame === true) {
-                startBtn.textContent = 'Play again';
-            }
+            restartBtn.style.display = 'inline';
 
             if (playerScore === 5) {
                 resultEl.textContent = 'Player win!';
