@@ -7,7 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hi there</h1>
+    <div id="container">
+        <h1>Rock Paper Scissor</h1>
+        <div id="announcer">
+            <div id="score">
+                <p><span id="player-score">5</span> : <span id="computer-score">1</span></p>
+            </div>
+            <div id="result">
+                <p>Player win!</p>
+            </div>
+        </div>
+        <div id="arena">
+            <p><span id="player-choice">👊</span> VS <span id="computer-choice">✌️</span></p>
+        </div>
+        <div id="deck">
+            <button id="start-btn">Start game</button>
+            <button class="choice-btn" id="rock-btn">👊</button>
+            <button class="choice-btn" id="paper-btn">✋</button>
+            <button class="choice-btn" id="scissor-btn">✌️</button>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
