@@ -19,15 +19,15 @@ let firstGame = true;
 startBtn.addEventListener('click', () => {
     if (firstGame) {
         announcerEl.style.display = 'block';
-        arenaEl.style.display = 'block';
+        arenaEl.style.display = 'flex';
     }
 
     playerScore = 0;
     computerScore = 0;
     playerScoreEl.textContent = 0;
     computerScoreEl.textContent = 0;
-    playerChoiceEl.textContent = '';
-    computerChoiceEl.textContent = '';
+    playerChoiceEl.textContent = '?';
+    computerChoiceEl.textContent = '?';
     startBtn.style.display = 'none';
     resultEl.style.display = 'none';
 

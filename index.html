@@ -9,12 +9,21 @@
 <body>
     <div id="container">
         <h1>Rock Paper Scissor</h1>
+        <p id="game-rule">The first to reach 5 points wins!</p>
         <div id="announcer">
             <p><span id="player-score"></span> : <span id="computer-score"></span></p>
             <p id="result"></p>
         </div>
         <div id="arena">
-            <p><span id="player-choice"></span> VS <span id="computer-choice"></span></p>
+            <div>
+                <p>You</p>
+                <p class="choice" id="player-choice"></p>
+            </div>
+            <p id="vs">VS</p>
+            <div>
+                <p>Computer</p>
+                <p class="choice" id="computer-choice"></p>
+            </div>
         </div>
         <div id="deck">
             <button id="start-btn">Start game</button>

@@ -43,6 +43,10 @@ h1 {
     margin: 10px 0 10px;
 }
 
+#game-rule {
+    margin: 10px 0 20px;
+}
+
 #announcer {
     display: none;
     margin: 10px 0 10px;
@@ -56,6 +60,22 @@ h1 {
 #arena {
     display: none;
     margin: 10px 0 10px;
+}
+
+.arena-show {
+    display: flex;
+    align-items: center;
+}
+
+#arena div {
+    min-height: 5em + 16px;
+}
+
+#vs {
+    margin: 0 50px 0 50px;
+}
+
+#vs, .choice {
     font-size: 5em;
 }
 
